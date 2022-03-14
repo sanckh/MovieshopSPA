@@ -1,0 +1,21 @@
+<div class="alert alert-primary" role="alert" *ngIf="flag">
+    genre added successfully
+  </div>
+  <form #addGenreForm ="ngForm" (submit)="addGenre(addGenreForm)">
+      <label for="name">Genre Name</label>
+      <input type="text" [(ngModel)] ="name" name="name" required /><br/>
+      <input type="submit" value="Add Genre" [disabled]="!addGenreForm.valid" />
+  <!--
+      <textarea  [(ngModel)] ="description" name="description"> </textarea> <br/>
+      <select [(ngModel)] ="country" name="country">
+          <option value="0"> select </option>
+          <option value="1">USA</option>
+          <option value="2">UK</option>
+      </select> <br/>
+      <input type="checkbox" [(ngModel)] ="tnc" name="tnc" required/> I accept terms and condition
+      <br/>
+      <input type="submit" value="Add Genre" [disabled]="!addGenreForm.valid" />
+      <input type="button" value="reset form" (click) ="resetForm(addGenreForm)" />
+      <input type="button" class="btn btn-link"  (click) ="fillDefault(addGenreForm)" value="Edit genre"/> 
+  -->
+  </form>
